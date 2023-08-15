@@ -1,6 +1,8 @@
 # DuoDuo
 My personal Hugo theme
 
+DuoDuo 是我之前养的一只小猫咪的名字，为什么是之前呢？这可真是个悲伤的问题呢...
+
 
 目前实现的功能有：
 - 数学公式支持
