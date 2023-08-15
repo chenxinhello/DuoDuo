@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <h2>{{ .Title }}</h2>
+
+  <div class="list">
+  {{ .Content }}
+  Laste update: <em>{{ .Lastmod.Format "January 2, 2006" }}</em>
+
+  
+  
+  <section class="misc"> 
+    {{ range .Pages }} 
+    <section class="misc">
+    <ul>
+      <li>
+        <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4> 
+    
+        {{ .Summary }}
+      </li>
+    </ul>
+    </section>
+  
+    {{ end }}
+  </section>
+
+<hr>
+
+  <section class="misc">
+  {{ with .Site.GetPage "/opensource.md" }}
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Summary }}</p>
+  {{ end }}
+  </section>
+
+  </div>
+{{ end }}

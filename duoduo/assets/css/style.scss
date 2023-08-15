@@ -1,0 +1,184 @@
+body {
+  color: black;
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 100%;
+  overflow-wrap: break-word;
+  text-align: justify;
+  display: flex;
+}
+
+html, body { background: white; }
+
+html { height: 100%; }
+
+h2, h3, h4, h5, h6 { margin-top: 1rem; font-family: monospace;}
+
+hr {
+  text-align: center;
+  border: 0;
+  height: 100%;
+  &:before { content: '/////////' }
+  &:after { content: attr(data-content) '//////////' }
+}
+
+code {
+  color: purple;
+  background: white; 
+  font-size: 80%;
+  padding: 0.1em 0.2em;
+  font-size: 90%;
+}
+
+blockquote {
+  font-style: italic;
+  border: thin solid black;
+  padding: 0.4rem;
+  text-align: justify;
+  p { margin: 0; }
+}
+
+
+table { width: 100%; }
+table, th, td {
+  border: thin solid black;
+  border-collapse: collapse;
+  padding: 0.4rem;
+}
+
+
+footer {
+  text-align: center;
+  foot-size: 10px;
+  margin: 1cm;  
+}
+
+/* post, misc 列表设置为 左对齐  */
+.list {
+  text-align: left;
+}
+
+
+a {
+  color: #0645AD;  /* #0645AD 是 维基百科 的超链接颜色*/
+  text-decoration: none;
+}
+
+
+a:hover { color: var(--link-color); text-decoration: underline; text-decoration-style: solid; }
+
+a:visited:hover { color: #FB5012; }
+
+
+/* 相关阅读列表设置为 左对齐  */
+.related {
+  text-align: left;
+}
+
+
+
+
+
+.container {
+  margin: 0 auto;
+  width: 95%;
+}
+
+nav {
+  background-color: white; /* 一种粉色 #ff9f99 */;
+  color: #666;
+  text-align: left;
+  font-size: 18px;
+
+}
+
+
+@import 'navbar';
+
+
+.oss {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.oss article {
+  border: 1px solid #ddd;
+  box-shadow: 3px 3px 3px #ddd;
+  margin: 0.5%;
+  padding: 0.5%;
+  width: 30%;
+}
+
+a.tag {
+  background-color: white;
+  color: #ff7065;
+  display: inline-block;
+  padding: 0.1em;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
+a.category {
+  background-color: white;
+  color: #ff7065;
+  display: inline-block;
+  padding: 0.1em;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
+figure,img {
+  max-width: 350px;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* 以下是 页码 相关设置 */
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 10px;
+  padding: 0;
+}
+
+@media only screen and (min-width: 300px) { 
+  .pagination {
+  width: 30%; 
+  }
+}
+
+
+.pagination > .page-item {
+ // border: 1px solid #ddd;
+  flex: 1;;
+  text-align: center;
+  width: 4em;
+  margin: 5px;
+}
+
+.pagination .page-link {
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+
+.pagination > .page-item.active {
+  background-color: #ff9f99;
+}
+.pagination > .page-item.active > .page-link {
+  color: #fff;
+}
+.pagination > .page-item.disabled > .page-link {
+  color: #fecfcc;
+}
+
+
+
+
+

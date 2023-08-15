@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+  <h3>{{ .Title }}</h3>
+  
+  <div class="list">
+
+  {{ .Content }}
+
+  <!---
+  {{ range .Paginator.Pages }}
+    {{ partial "post_summary.html" . }}
+  {{ end }}
+  </div>
+-->
+
+  <ul>
+    {{ range .Paginator.Pages }} 
+    <li>
+    {{ partial "post_summary.html" . }}
+        <!--<a href="{{ .RelPermalink }}">{{ .Title }}</a>-->
+    </li>
+    {{ end }}
+  </ul>
+
+  Last update: <em>{{ .Date.Format "January 2, 2006" }}</em>
+
+ 
+
+  <center>
+  {{ template "_internal/pagination.html" . }}
+  </center>
+
+  
+
+{{ end }}

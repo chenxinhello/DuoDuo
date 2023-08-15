@@ -1,0 +1,75 @@
+{{ define "main" }}
+    <div class="project-container"> 
+        <!--
+        <section class="project-list">
+            <h4>Misc</h4>
+            <ul>
+                {{ range (where .Site.RegularPages "Type" "in" "projects") }} 
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+        </section>
+        -->
+        <h4>Misc/</h4>
+
+        <section class="project"> 
+            <h1>{{ .Title }}</h1>
+            
+            (Last modified on <em>{{ .Lastmod.Format "January 2, 2006" }}</em>.
+            Reading time: <em>{{ math.Round (div (countwords .Content) 150.0) }} minutes</em>)
+            <p>
+            <img alt="{{ .Params.alt_text }}" src="{{ .Params.image }}">
+            </p>
+
+
+            {{ .Content }}
+        
+         
+         
+         <!--
+         <h3>Tech used</h3>
+         <ul>
+            {{ range .Params.tech_used }}
+                <li>{{ . }}</li>
+            {{ end }}
+         </ul>
+         -->
+
+        
+
+        </section>
+        <hr>
+        <p>
+        (Posted on <em>{{ .Date.Format "January 2, 2006" }}</em>)
+        </p>
+     </div>
+
+
+
+     <span class="tags"> 
+        
+
+        <em>
+            Tags: 
+            {{ range .Params.tags }}
+            <a class="tag" href="/tags/{{ . | urlize }}">#{{ . }}</a>
+            {{ end }}
+        </em>
+    </span>
+
+    
+
+    <section class="related">
+        {{ $related := .Site.RegularPages.Related . | first 5 }} 
+        {{ with $related }}
+        <h5>Related articles:</h5>
+            <ul>
+            {{ range . }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li> 
+            {{ end }}
+            </ul>
+        {{ end }}
+    </section>
+
+
+{{ end }}
